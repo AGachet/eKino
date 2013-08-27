@@ -1,5 +1,5 @@
 # Brunch with js
-This is a technical demo with [Brunch](http://brunch.io/).
+This is a technical demo with [Brunch](http://brunch.io/) for eKino.
 
 Main languages are JavaScript,
 [Stylus](http://learnboost.github.com/stylus/) and
@@ -31,16 +31,14 @@ Main languages are JavaScript,
         normalize.css
         helpers.css
 
-* `config.coffee` contains configuration of your app. You can set plugins /
-languages that would be used here.
-* `app/assets` contains images / static files. Contents of the directory would
-be copied to `build/` without change.
+* `config.coffee` contains configuration of the app.
+* `app/assets` contains images / static files.
 Other `app/` directories could contain files that would be compiled. Languages,
 that compile to JS (coffeescript, roy etc.) or js files and located in app are 
 automatically wrapped in module closure so they can be loaded by 
 `require('module/location')`.
-* `app/models` & `app/views` contain base classes your app should inherit from.
-* `test/` contains feature & unit tests.
+* `app/models` & `app/views` contain base classes of the app.
+* `test/` can contains feature & unit tests.
 * `vendor/` contains all third-party code. The code wouldn’t be wrapped in
 modules, it would be loaded instantly instead.
 
