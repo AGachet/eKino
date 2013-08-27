@@ -696,6 +696,10 @@ footer .accor .linkPict:first-child a {
   font: 20px/65px 'Museo-500', sans-serif;
   color: #595149;
 }
+#site #header .search h3 [data-icon]:before {
+  font-size: 18px;
+  margin: 0 16px 0 0;
+}
 #site #header .search .simpleSearch {
   border: none;
   float: right;

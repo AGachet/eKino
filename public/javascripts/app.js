@@ -228,7 +228,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<form>\n	<span data-icon=\"s\"></span>\n	<h3>Rechercher et réserver</h3>\n	<fieldset class=\"simpleSearch\">\n\n		<label for=\"destination\">Destination</label>\n		<input id=\"destination\" type=\"text\" placeholder=\"Ville / Pays / Code Hôtel\" value=\"\" name=\"destination\" />\n		<span data-icon=\"H\"></span>\n\n		<label for=\"arrival\">Arrivée</label>\n		<input id=\"arrival\" type=\"text\" value=\"\" name=\"arrival\" />\n		<span data-icon=\"c\"></span>\n\n		<label for=\"departure\">Départ</label>\n		<input id=\"departure\" type=\"text\" value=\"\" name=\"departure\" />\n		<span data-icon=\"c\"></span>\n\n	</fieldset>\n</form>";
+  return "<form>\n	<h3><span data-icon=\"s\"></span>Rechercher et réserver</h3>\n	<fieldset class=\"simpleSearch\">\n\n		<label for=\"destination\">Destination</label>\n		<input id=\"destination\" type=\"text\" placeholder=\"Ville / Pays / Code Hôtel\" value=\"\" name=\"destination\" />\n		<span data-icon=\"H\"></span>\n\n		<label for=\"arrival\">Arrivée</label>\n		<input id=\"arrival\" type=\"text\" value=\"\" name=\"arrival\" />\n		<span data-icon=\"c\"></span>\n\n		<label for=\"departure\">Départ</label>\n		<input id=\"departure\" type=\"text\" value=\"\" name=\"departure\" />\n		<span data-icon=\"c\"></span>\n\n	</fieldset>\n</form>";
   });
 if (typeof define === 'function' && define.amd) {
   define([], function() {
