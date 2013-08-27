@@ -1,0 +1,29 @@
+// nib is a powerful lib for stylus that provides cross-browser css3 mixins.
+// No more vendor prefixes. http://visionmedia.github.com/nib/
+@import 'nib'
+@import 'fonts'
+@import 'imagesvar'
+
+fontFaces()
+
+*
+  box-sizing: border-box
+
+#site
+  width 960px
+  height 100%
+  margin 0 auto
+
+body
+  background url(bgSite) #fff repeat-x 
+
+[data-icon]:before
+	margin 0 5px
+	fontStyle(icons)
+	content attr(data-icon)
+	speak none
+	font-weight normal
+	font-variant normal
+	text-transform none
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale 

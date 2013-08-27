@@ -1,0 +1,146 @@
+// nib is a powerful lib for stylus that provides cross-browser css3 mixins.
+// No more vendor prefixes. http://visionmedia.github.com/nib/
+@import 'nib'
+@import 'fonts'
+@import 'imagesvar'
+
+footer
+  width 100%
+
+  .infos
+    width 100%
+    float left
+    background #fff
+    padding 20px
+    margin 0 0 10px 0
+    border-radius 5px
+    box-shadow 0 1px 2px #676767
+
+    .topInfo
+      width 100%
+
+      h1
+        margin 0
+        float left
+        width 80px
+        text-indent -9000px
+        background url(ibisFbLogo) no-repeat
+
+      .fbCount 
+        float left
+        background url(ibisFbLogo) 0 -56px no-repeat
+        width 120px
+        height 30px
+
+    .middleInfo
+      border-top 1px solid #eee
+      border-bottom 1px solid #eee
+      margin 20px 0 0 0
+      width 100%
+      float left
+
+      .columns
+        margin 20px 0 0
+
+        ul
+          margin 0 0 0 45px
+          width 165px
+          float left
+          padding 0
+
+          &.logos
+            width 70px
+            margin 0
+
+            .bestPrice
+              height 80px
+              background url(footerPromoLogo) -8px 0 no-repeat 
+
+          li
+            width 100%
+            list-style none
+            fontStyle(arialN, 11px, #6B6D6F, 16px)
+
+            h3
+              font-weight bolder
+
+            a
+              text-decoration none
+              color #6B6D6F
+
+              &:hover
+                text-decoration underline
+
+
+
+      .line
+        float left
+        width 100%
+        margin 25px 0 15px 0
+
+        ul
+          padding 0
+          width 700px
+          margin 0 auto
+
+          li 
+            border-left 1px solid #bbb
+            padding 0 0 0 10px
+            margin 0 10px 0 0
+            list-style none
+            float left
+
+            &:first-child  
+              border-left none
+
+            a
+              float left
+              text-decoration none
+              fontStyle(arialN, 11px, #6B6D6F, 16px)
+
+              &:hover
+                text-decoration underline
+
+    .botInfo
+      float left
+      fontStyle(arialN, 11px, #6B6D6F, 16px)
+
+      h3
+        margin 20px 0 0 0
+        font-weight bolder
+        
+  .accor
+    width 100%
+    float left
+    margin 0
+    padding 0 0 0 7px
+    background #fff
+    border-radius 5px
+    box-shadow 0 1px 2px #676767
+
+    li
+      float left
+      list-style none
+      margin 0 5px
+
+      a
+        text-align center
+        text-decoration none
+        fontStyle(arialN, 11px, #5B5B5D, 38px)
+
+        &:hover
+          text-decoration underline
+
+    .linkPict 
+      text-indent -9000px
+      width 65px
+      
+      a
+        display block
+        background url(accorButtons) 0 5px no-repeat
+
+      &:first-child
+        width 98px
+
+        a
+          background-position 0 -38px

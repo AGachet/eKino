@@ -1,0 +1,121 @@
+// nib is a powerful lib for stylus that provides cross-browser css3 mixins.
+// No more vendor prefixes. http://visionmedia.github.com/nib/
+@import 'nib'
+@import 'fonts'
+@import 'imagesvar'
+
+#site
+
+  #header
+    margin 0 0 20px
+    float left
+    width 100%
+
+    .profile
+      ul
+        list-style none
+        margin 0
+        padding 0
+        fontStyle(museoN, 14px, #666, 40px) 
+
+        &:first-child
+          float left
+
+        &:last-child
+          float right
+
+        &.login [data-icon]:before
+          font-size 15px
+          vertical-align text-bottom
+        
+        li 
+          float left
+          margin 0 0 0 20px
+          cursor pointer
+
+    .welcome
+      width 100%
+      float left
+      background-color #595149
+      border-radius 5px
+      padding 0 20px
+
+      h1
+        float left
+        margin 0
+        fontStyle(museoS, 24px, #fff, 65px)
+
+      .main-nav
+        list-style none
+        float left
+        margin 20px 0 0 0
+
+        li 
+          float left
+          width 114px
+          height 24px
+          cursor pointer
+          margin 0 30px 0 0
+          text-indent -9999px
+          background url(ibisButtons) 0 -77px no-repeat
+
+          &:first-child
+            background-position 0 0
+            margin 0 30px 0 85px
+
+          &:last-child
+            background-position 0 -152px
+
+      .bookings
+        float right
+        border none
+        height 31px
+        margin 16px 0 0
+        background linear-gradient(top, #817b74, #706a62)
+        box-shadow 0 2px 1px #333 inset
+        fontStyle(arialN, 13px, #fff, 31px, 0 1px 1px #000)
+
+    .search
+      width 100%
+      float left
+      background #fff
+      margin 0
+      border-radius 5px
+
+      h3
+        float left
+        margin 0 0 0 20px
+        fontStyle(museoN, 20px, #595149, 65px)
+
+      .simpleSearch
+        border none
+        float right
+        margin 0 20px 0 0
+        padding 0
+
+        label
+          fontStyle(museoN, 12px, #9C948B, 65px)
+
+        input
+          height 31px
+          width 70px
+          //margin 0 15px 0 5px
+          fontStyle(arialN, 12px, #717375)
+
+        [data-icon]:before
+          color #9C948B
+          font-size 20px
+          margin 0 15px 0 5px
+          vertical-align middle
+
+
+        #destination
+          width 143px
+
+  &.home 
+    #header
+      .search
+        margin 0
+
+
+

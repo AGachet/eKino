@@ -1,0 +1,865 @@
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Museo-300';
+  src: url("/fonts/27DC84_1_0.eot");
+  src: url("/fonts/27DC84_1_0.eot?#iefix") format('embedded-opentype'), url("/fonts/27DC84_1_0.woff") format('woff'), url("/fonts/27DC84_1_0.ttf") format('truetype'), url("/fonts/27DC84_1_0.svg#wf") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo-500';
+  src: url("/fonts/27DC84_2_0.eot");
+  src: url("/fonts/27DC84_2_0.eot?#iefix") format('embedded-opentype'), url("/fonts/27DC84_2_0.woff") format('woff'), url("/fonts/27DC84_2_0.ttf") format('truetype'), url("/fonts/27DC84_2_0.svg#wf") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo-700';
+  src: url("/fonts/27DC84_0_0.eot");
+  src: url("/fonts/27DC84_0_0.eot?#iefix") format('embedded-opentype'), url("/fonts/27DC84_0_0.woff") format('woff'), url("/fonts/27DC84_0_0.ttf") format('truetype'), url("/fonts/27DC84_0_0.svg#wf") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MuseoSans-500';
+  src: url("/fonts/27DC84_3_0.eot");
+  src: url("/fonts/27DC84_3_0.eot?#iefix") format('embedded-opentype'), url("/fonts/27DC84_3_0.woff") format('woff'), url("/fonts/27DC84_3_0.ttf") format('truetype'), url("/fonts/27DC84_3_0.svg#wf") format('svg');
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url("/fonts/icomoon.eot");
+  src: url("/fonts/icomoon.eot?#iefix") format('embedded-opentype'), url("/fonts/icomoon.woff") format('woff'), url("/fonts/icomoon.ttf") format('truetype'), url("/fonts/icomoon.svg#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#site {
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+body {
+  background: url("/images//interface/bg.png") #fff repeat-x;
+}
+[data-icon]:before {
+  margin: 0 5px;
+  font: 12px/normal 'icomoon', sans-serif;
+  color: #666;
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+footer {
+  width: 100%;
+}
+footer .infos {
+  width: 100%;
+  float: left;
+  background: #fff;
+  padding: 20px;
+  margin: 0 0 10px 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px #676767;
+  box-shadow: 0 1px 2px #676767;
+}
+footer .infos .topInfo {
+  width: 100%;
+}
+footer .infos .topInfo h1 {
+  margin: 0;
+  float: left;
+  width: 80px;
+  text-indent: -9000px;
+  background: url("/images//logos/fb_Ibis.png") no-repeat;
+}
+footer .infos .topInfo .fbCount {
+  float: left;
+  background: url("/images//logos/fb_Ibis.png") 0 -56px no-repeat;
+  width: 120px;
+  height: 30px;
+}
+footer .infos .middleInfo {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin: 20px 0 0 0;
+  width: 100%;
+  float: left;
+}
+footer .infos .middleInfo .columns {
+  margin: 20px 0 0;
+}
+footer .infos .middleInfo .columns ul {
+  margin: 0 0 0 45px;
+  width: 165px;
+  float: left;
+  padding: 0;
+}
+footer .infos .middleInfo .columns ul.logos {
+  width: 70px;
+  margin: 0;
+}
+footer .infos .middleInfo .columns ul.logos .bestPrice {
+  height: 80px;
+  background: url("/images//logos/footerPromoLogos.png") -8px 0 no-repeat;
+}
+footer .infos .middleInfo .columns ul li {
+  width: 100%;
+  list-style: none;
+  font: 11px/16px 'Arial, Helvetica', sans-serif;
+  color: #6b6d6f;
+}
+footer .infos .middleInfo .columns ul li h3 {
+  font-weight: bolder;
+}
+footer .infos .middleInfo .columns ul li a {
+  text-decoration: none;
+  color: #6b6d6f;
+}
+footer .infos .middleInfo .columns ul li a:hover {
+  text-decoration: underline;
+}
+footer .infos .middleInfo .line {
+  float: left;
+  width: 100%;
+  margin: 25px 0 15px 0;
+}
+footer .infos .middleInfo .line ul {
+  padding: 0;
+  width: 700px;
+  margin: 0 auto;
+}
+footer .infos .middleInfo .line ul li {
+  border-left: 1px solid #bbb;
+  padding: 0 0 0 10px;
+  margin: 0 10px 0 0;
+  list-style: none;
+  float: left;
+}
+footer .infos .middleInfo .line ul li:first-child {
+  border-left: none;
+}
+footer .infos .middleInfo .line ul li a {
+  float: left;
+  text-decoration: none;
+  font: 11px/16px 'Arial, Helvetica', sans-serif;
+  color: #6b6d6f;
+}
+footer .infos .middleInfo .line ul li a:hover {
+  text-decoration: underline;
+}
+footer .infos .botInfo {
+  float: left;
+  font: 11px/16px 'Arial, Helvetica', sans-serif;
+  color: #6b6d6f;
+}
+footer .infos .botInfo h3 {
+  margin: 20px 0 0 0;
+  font-weight: bolder;
+}
+footer .accor {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0 0 0 7px;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px #676767;
+  box-shadow: 0 1px 2px #676767;
+}
+footer .accor li {
+  float: left;
+  list-style: none;
+  margin: 0 5px;
+}
+footer .accor li a {
+  text-align: center;
+  text-decoration: none;
+  font: 11px/38px 'Arial, Helvetica', sans-serif;
+  color: #5b5b5d;
+}
+footer .accor li a:hover {
+  text-decoration: underline;
+}
+footer .accor .linkPict {
+  text-indent: -9000px;
+  width: 65px;
+}
+footer .accor .linkPict a {
+  display: block;
+  background: url("/images//buttons/accor.png") 0 5px no-repeat;
+}
+footer .accor .linkPict:first-child {
+  width: 98px;
+}
+footer .accor .linkPict:first-child a {
+  background-position: 0 -38px;
+}
+
+#site #header {
+  margin: 0 0 20px;
+  float: left;
+  width: 100%;
+}
+#site #header .profile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font: 14px/40px 'Museo-500', sans-serif;
+  color: #666;
+}
+#site #header .profile ul:first-child {
+  float: left;
+}
+#site #header .profile ul:last-child {
+  float: right;
+}
+#site #header .profile ul.login [data-icon]:before {
+  font-size: 15px;
+  vertical-align: text-bottom;
+}
+#site #header .profile ul li {
+  float: left;
+  margin: 0 0 0 20px;
+  cursor: pointer;
+}
+#site #header .welcome {
+  width: 100%;
+  float: left;
+  background-color: #595149;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+#site #header .welcome h1 {
+  float: left;
+  margin: 0;
+  font: 24px/65px 'Museo-300', sans-serif;
+  color: #fff;
+}
+#site #header .welcome .main-nav {
+  list-style: none;
+  float: left;
+  margin: 20px 0 0 0;
+}
+#site #header .welcome .main-nav li {
+  float: left;
+  width: 114px;
+  height: 24px;
+  cursor: pointer;
+  margin: 0 30px 0 0;
+  text-indent: -9999px;
+  background: url("/images//buttons/ibisMenu.png") 0 -77px no-repeat;
+}
+#site #header .welcome .main-nav li:first-child {
+  background-position: 0 0;
+  margin: 0 30px 0 85px;
+}
+#site #header .welcome .main-nav li:last-child {
+  background-position: 0 -152px;
+}
+#site #header .welcome .bookings {
+  float: right;
+  border: none;
+  height: 31px;
+  margin: 16px 0 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #817b74), color-stop(1, #706a62));
+  background: -webkit-linear-gradient(top, #817b74 0, #706a62 100%);
+  background: -moz-linear-gradient(top, #817b74 0, #706a62 100%);
+  background: -o-linear-gradient(top, #817b74 0, #706a62 100%);
+  background: -ms-linear-gradient(top, #817b74 0, #706a62 100%);
+  background: linear-gradient(top, #817b74 0, #706a62 100%);
+  -webkit-box-shadow: 0 2px 1px #333 inset;
+  box-shadow: 0 2px 1px #333 inset;
+  font: 13px/31px 'Arial, Helvetica', sans-serif;
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+}
+#site #header .search {
+  width: 100%;
+  float: left;
+  background: #fff;
+  margin: 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#site #header .search h3 {
+  float: left;
+  margin: 0 0 0 20px;
+  font: 20px/65px 'Museo-500', sans-serif;
+  color: #595149;
+}
+#site #header .search .simpleSearch {
+  border: none;
+  float: right;
+  margin: 0 20px 0 0;
+  padding: 0;
+}
+#site #header .search .simpleSearch label {
+  font: 12px/65px 'Museo-500', sans-serif;
+  color: #9c948b;
+}
+#site #header .search .simpleSearch input {
+  height: 31px;
+  width: 70px;
+  font: 12px/normal 'Arial, Helvetica', sans-serif;
+  color: #717375;
+}
+#site #header .search .simpleSearch [data-icon]:before {
+  color: #9c948b;
+  font-size: 20px;
+  margin: 0 15px 0 5px;
+  vertical-align: middle;
+}
+#site #header .search .simpleSearch #destination {
+  width: 143px;
+}
+#site.home #header .search {
+  margin: 0;
+}
+
+#site.home #content {
+  float: left;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+#site.home #content .splitMedia {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+#site.home #content .splitMedia li {
+  list-style: none;
+}
+#site.home #content .meaBlocks {
+  float: left;
+  padding: 0;
+  width: 100%;
+  margin: 20px 0 0;
+}
+#site.home #content .meaBlocks > li {
+  display: table-cell;
+  height: 100%;
+}
+#site.home #content .meaBlocks > li .meaContainer {
+  display: table;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 15px 0 0;
+  height: 100%;
+  width: 310px;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaHeader {
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  background: #f2f1ef;
+  min-height: 64px;
+  padding: 16px 20px;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaHeader h3 {
+  margin: 0;
+  padding: 0;
+  font: 13px/15px 'Museo-700', sans-serif;
+  color: #4f4f51;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaHeader a {
+  text-decoration: none;
+  font: 12px/12px 'Arial, Helvetica', sans-serif;
+  color: #6b6d6f;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaHeader a:hover {
+  text-decoration: underline;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaHeader [data-icon]:before {
+  vertical-align: middle;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent {
+  float: left;
+  padding: 16px 14px;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent p {
+  margin: 0;
+  padding: 5px;
+  font: 12px/16px 'Arial, Helvetica', sans-serif;
+  color: #6b6d6f;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent a {
+  text-decoration: none;
+  font: 14px/16px 'Arial, Helvetica', sans-serif;
+  color: #4f4f51;
+  font-weight: bold;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent a:hover {
+  text-decoration: underline;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .leftSide {
+  float: left;
+  width: 125px;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .rightSide {
+  float: left;
+  width: 150px;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .slimCarrouselPanel {
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .slimCarrouselPanel li {
+  list-style: none;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .slimCarrouselButton {
+  margin: 0 0 0 108px;
+  float: left;
+  padding: 0;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .slimCarrouselButton [data-icon]:before {
+  color: #b6b6b6;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .slimCarrouselButton [data-icon].current:before {
+  color: #d3d3d3;
+}
+#site.home #content .meaBlocks > li .meaContainer .meaContent .slimCarrouselButton li {
+  list-style: none;
+  float: left;
+}
+
+/*
+ *  IMAGES VAR
+ */
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } 
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+
+/*@ sourceMappingURL=app.css.map*/

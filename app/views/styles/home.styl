@@ -1,0 +1,105 @@
+// nib is a powerful lib for stylus that provides cross-browser css3 mixins.
+// No more vendor prefixes. http://visionmedia.github.com/nib/
+@import 'nib'
+@import 'fonts'
+@import 'imagesvar'
+
+#site.home #content
+  float left
+  width 100%
+  margin 0 0 20px 0
+
+  .splitMedia
+    width 100%
+    padding 0
+    margin 0
+
+    li  
+      list-style none
+
+  .meaBlocks
+    float left
+    padding 0
+    width 100%
+    margin 20px 0 0
+
+    > li
+      display table-cell
+      height 100%
+
+      .meaContainer
+        display table
+        background #fff
+        border-radius 5px
+        margin 0 15px 0 0
+        height 100%
+        width 310px
+
+        .meaHeader
+          border-radius 5px 5px 0 0
+          background #F2F1EF
+          min-height 64px
+          padding 16px 20px
+
+          h3
+            margin 0
+            padding 0
+            fontStyle(museoL, 13px, #4F4F51, 15px)
+
+          a
+            text-decoration none
+            fontStyle(arialN, 12px, #6B6D6F, 12px)
+
+            &:hover
+              text-decoration underline
+
+          [data-icon]:before
+            vertical-align middle
+
+        .meaContent
+          float left
+          padding 16px 14px
+
+          p
+            margin 0
+            padding 5px
+            fontStyle(arialN, 12px, #6B6D6F, 16px)
+
+          a
+            text-decoration none
+            fontStyle(arialN, 14px, #4F4F51, 16px)
+            font-weight bold
+
+            &:hover
+              text-decoration underline
+
+          .leftSide
+            float left
+            width 125px
+
+          .rightSide
+            float left
+            width 150px
+
+          .slimCarrouselPanel
+            padding 0
+            margin 0
+            float left
+
+            li
+              list-style none
+
+          .slimCarrouselButton
+            margin 0 0 0 108px
+            float left
+            padding 0
+            
+            [data-icon]:before
+              color #b6b6b6
+
+            [data-icon].current:before
+              color #d3d3d3
+
+            li
+              list-style none
+              float left
