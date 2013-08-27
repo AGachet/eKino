@@ -58,6 +58,7 @@
 
         .meaContent
           float left
+          width 100%
           padding 16px 14px
 
           p
@@ -84,10 +85,25 @@
           .slimCarrouselPanel
             padding 0
             margin 0
+            width 100%
+            height 100px
             float left
+            position relative
+            overflow hidden
 
             li
               list-style none
+              position absolute
+              width 280px
+
+              &.firstPan
+                top 0
+
+              &.secondPan
+                top 100px
+
+              &.thirdPan 
+                top 200px
 
           .slimCarrouselButton
             margin 0 0 0 108px

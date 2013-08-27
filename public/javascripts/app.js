@@ -195,7 +195,34 @@ var template = require('./templates/home');
 module.exports = View.extend({
 
   el: '#content',
-  template: template
+
+  template: template,
+
+	initialize: function(){
+
+		var view = this;
+
+    view.carrouselRun();
+
+  },
+
+  events: {
+    
+	},
+
+	carrouselRun: function(e){
+
+		var view, viewEl, carrouselContainer;
+
+		view = this;
+		viewEl = view.$el;
+		carrouselContainer = viewEl.find('.meaBlocks');
+
+		console.log('viewEl');
+    console.log(viewEl);
+		console.log(carrouselContainer);
+
+	}
   
 });
 
@@ -248,7 +275,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<ul class=\"splitMedia\">\n	<li>\n		<a href=\"#\">\n			<img src=\"/images/content/carrouselLarge/offreIbisVideo.jpg\" alt=\"lite la vidéo\" />\n		</a>\n	</li>\n</ul>\n<ul class=\"meaBlocks\">\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>TOP PROMOTIONS</h3>\n				<a href=\"#\">Voir toutes nos promotions</a><span data-icon=\"l\"></span>\n			</div>\n			<div class=\"meaContent\">\n				<ul class=\"slimCarrouselPanel\">\n					<li>\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n				</ul>\n				<ul class=\"slimCarrouselButton\">\n					<li class=\"current\" data-icon=\"d\"></li>\n					<li data-icon=\"d\"></li>\n					<li data-icon=\"d\"></li>\n				</ul>\n			</div>	\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>DECOUVREZ LES SERVICES SERVICES ibis</h3>\n				<a href=\"#\">Voir tous nos engagements</a><span data-icon='l'></span>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisPhone.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>ibis vous simplifie la vie ! Tout ibis depuis votre mobile</p>\n					<a href=\"#\">Créer votre compte</a>\n				</div>\n			</div>\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>VOTRE FIDÉLITÉ RÉCOMPENSÉE</h3>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisCard.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>Avantages, réductions, services exclusifs, ... nous récompensons votre fidélité !</p>\n					<a href=\"#\">En savoir plus</a>\n				</div>\n			</div>\n		</div>\n	</li>\n</ul>";
+  return "<ul class=\"splitMedia\">\n	<li>\n		<a href=\"#\">\n			<img src=\"/images/content/carrouselLarge/offreIbisVideo.jpg\" alt=\"lite la vidéo\" />\n		</a>\n	</li>\n</ul>\n<ul class=\"meaBlocks\">\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>TOP PROMOTIONS</h3>\n				<a href=\"#\">Voir toutes nos promotions</a><span data-icon=\"l\"></span>\n			</div>\n			<div class=\"meaContent\">\n				<ul class=\"slimCarrouselPanel\">\n					<li class=\"firstPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"secondPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"thirdPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n				</ul>\n				<ul class=\"slimCarrouselButton\">\n					<li class=\"current\" data-icon=\"d\"></li>\n					<li data-icon=\"d\"></li>\n					<li data-icon=\"d\"></li>\n				</ul>\n			</div>	\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>DECOUVREZ LES SERVICES SERVICES ibis</h3>\n				<a href=\"#\">Voir tous nos engagements</a><span data-icon='l'></span>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisPhone.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>ibis vous simplifie la vie ! Tout ibis depuis votre mobile</p>\n					<a href=\"#\">Créer votre compte</a>\n				</div>\n			</div>\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>VOTRE FIDÉLITÉ RÉCOMPENSÉE</h3>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisCard.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>Avantages, réductions, services exclusifs, ... nous récompensons votre fidélité !</p>\n					<a href=\"#\">En savoir plus</a>\n				</div>\n			</div>\n		</div>\n	</li>\n</ul>";
   });
 if (typeof define === 'function' && define.amd) {
   define([], function() {

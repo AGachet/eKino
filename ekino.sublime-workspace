@@ -1,0 +1,201 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"h",
+				"h3	Tag"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"a",
+				"a"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Anthony/Sites/eKinoTest/app/assets/index.html",
+		"/Users/Anthony/Sites/eKinoTest/app/views/styles/home.styl",
+		"/Users/Anthony/Sites/eKinoTest/app/views/styles/footer.styl",
+		"/Users/Anthony/Sites/eKinoTest/app/views/templates/home.hbs",
+		"/Users/Anthony/Sites/eKinoTest/app/views/styles/imagesvar.styl",
+		"/Users/Anthony/Sites/eKinoTest/app/views/styles/header.styl",
+		"/Users/Anthony/Sites/eKinoTest/app/lib/router.js",
+		"/Users/Anthony/Sites/eKinoTest/app/views/templates/footerInfos.hbs",
+		"/Users/Anthony/Sites/eKinoTest/app/views/styles/application.styl",
+		"/Users/Anthony/Sites/eKinoTest/app/views/footerInfos_view.js",
+		"/Users/Anthony/Sites/eKinoTest/app/views/home_view.js",
+		"/Users/Anthony/Sites/eKinoTest/app/application.js",
+		"/Users/Anthony/Sites/eKinoTest/app/views/templates/headerSearch.hbs",
+		"/Users/Anthony/Sites/eKinoTest/app/views/headerSearch_view.js"
+	],
+	"find":
+	{
+		"height": 46.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"%\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.527519180389,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "ekino.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 250.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
