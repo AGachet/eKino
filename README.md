@@ -1,14 +1,9 @@
 # Brunch with js
-This is a simple js skeleton for [Brunch](http://brunch.io/).
+This is a technical demo with [Brunch](http://brunch.io/).
 
 Main languages are JavaScript,
 [Stylus](http://learnboost.github.com/stylus/) and
 [Handlebars](http://handlebarsjs.com/).
-
-## Getting started
-
-Run `brunch new <app> -s github://brunch/simple-js-skeleton` & `brunch build`.
-See more info on the [official site](http://brunch.io)
 
 ## Overview
 
@@ -54,10 +49,8 @@ This all will generate `public/` (by default) directory when `brunch build` or `
 ## Other
 Versions of software the skeleton uses:
 
-* jQuery 1.7.2
-* Backbone 0.9.1
-* Underscore 1.3.3
+* jQuery 2.0.3
+* normalize-css 2.1.2
+* Backbone 1.0.0
+* lodash 1.3.1
 * HTML5Boilerplate 3.0.3
-
-The license is [public domain](http://creativecommons.org/publicdomain/zero/1.0/).
-Use it however you want.
