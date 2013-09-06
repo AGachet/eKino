@@ -200,31 +200,103 @@ module.exports = View.extend({
 
 	initialize: function(){
 
-		var view = this;
-
-    view.carrouselRun();
 
   },
 
   events: {
-    
+    'click .meaBlocks .slimCarrouselButton li' : 'carrouselRun'
 	},
 
-	carrouselRun: function(e){
+	/*
+	 * 	Rewritte render function
+	 */
 
-		var view, viewEl, carrouselContainer;
+	render: function() {
+
+		var view, viewEl;
 
 		view = this;
 		viewEl = view.$el;
-		carrouselContainer = viewEl.find('.meaBlocks');
 
-		console.log('viewEl');
-    console.log(viewEl);
-		console.log(carrouselContainer);
+    viewEl.html(view.template());
+    view.carrouselRun();
+
+  },
+
+	/*
+	 * 	Carrousel Slim from MEA blocks
+	 */
+
+	carrouselRun: function(e, params){
+
+		var view, viewEl, panelContainer, buttonsContainer, pansElemsList, currentPanPos, animateParams;
+
+		view = this;
+		viewEl = view.$el;
+		panelContainer = viewEl.find('.meaBlocks .slimCarrouselPanel');
+    buttonsContainer = viewEl.find('.meaBlocks .slimCarrouselButton');
+		pansElemsList = panelContainer.find('li');
+		currentPanPos = pansElemsList.index(panelContainer.find('.current'));
+
+		// Parameters for animate function
+		animateParams = { 
+			elementOrigin : panelContainer.find('li').eq(0),
+			totalPans : panelContainer.find('li').length,
+			buttons : buttonsContainer,
+			intervalPx : 100,
+			intervalMs : 3000,
+			duration : 1000,
+			nextPosition : false
+		}
+
+		// Carrousel animation
+		function animate(params) {
+
+			var animation, elem, totalPosition, currentPosition, currentMargin, nextMargin, nextPosition, carrouselRunning;
+
+			elem = animateParams.elementOrigin;
+			totalPosition = ( params.totalPans - 1 ) * params.intervalPx;
+			currentMargin = Math.abs(elem.css("margin-top").replace("px", ""));
+			currentPosition = currentMargin / params.intervalPx;
+
+			if (params.nextPosition === false) {
+				nextMargin = (currentMargin < totalPosition) ? currentMargin + params.intervalPx : 0 ; 
+			} else {
+				nextMargin = params.nextPosition * params.intervalPx;
+			}
+
+			nextPosition = nextMargin / params.intervalPx;
+
+			animation = elem.animate(
+				{ marginTop: '-'+nextMargin+'px' },
+				{ duration: params.duration }
+			);
+
+			$.when(animation).then(function(){
+				params.buttons.find('li')
+				.removeClass('current')
+				.eq(nextPosition).addClass('current');
+			});
+
+		}		
+
+		if (e !== undefined) {
+			clearInterval(carrouselRunning);
+			animateParams.nextPosition = $(e.currentTarget).index();
+			animate(animateParams);
+			animateParams.nextPosition = false;
+		}
+
+		carrouselRunning = setInterval(function(){
+			animate(animateParams);
+		}, animateParams.intervalMs);
 
 	}
   
-});
+}); 
+
+
+
 
 });
 
@@ -275,7 +347,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<ul class=\"splitMedia\">\n	<li>\n		<a href=\"#\">\n			<img src=\"/images/content/carrouselLarge/offreIbisVideo.jpg\" alt=\"lite la vidéo\" />\n		</a>\n	</li>\n</ul>\n<ul class=\"meaBlocks\">\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>TOP PROMOTIONS</h3>\n				<a href=\"#\">Voir toutes nos promotions</a><span data-icon=\"l\"></span>\n			</div>\n			<div class=\"meaContent\">\n				<ul class=\"slimCarrouselPanel\">\n					<li class=\"firstPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"secondPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"thirdPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n				</ul>\n				<ul class=\"slimCarrouselButton\">\n					<li class=\"current\" data-icon=\"d\"></li>\n					<li data-icon=\"d\"></li>\n					<li data-icon=\"d\"></li>\n				</ul>\n			</div>	\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>DECOUVREZ LES SERVICES SERVICES ibis</h3>\n				<a href=\"#\">Voir tous nos engagements</a><span data-icon='l'></span>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisPhone.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>ibis vous simplifie la vie ! Tout ibis depuis votre mobile</p>\n					<a href=\"#\">Créer votre compte</a>\n				</div>\n			</div>\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>VOTRE FIDÉLITÉ RÉCOMPENSÉE</h3>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisCard.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>Avantages, réductions, services exclusifs, ... nous récompensons votre fidélité !</p>\n					<a href=\"#\">En savoir plus</a>\n				</div>\n			</div>\n		</div>\n	</li>\n</ul>";
+  return "<ul class=\"splitMedia\">\n	<li>\n		<a href=\"#\">\n			<img src=\"/images/content/carrouselLarge/offreIbisVideo.jpg\" alt=\"lite la vidéo\" />\n		</a>\n	</li>\n</ul>\n<ul class=\"meaBlocks\">\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>TOP PROMOTIONS</h3>\n				<a href=\"#\">Voir toutes nos promotions</a><span data-icon=\"l\"></span>\n			</div>\n			<div class=\"meaContent\">\n				<ul class=\"slimCarrouselPanel\">\n					<li class=\"firstPan current\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"secondPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"thirdPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n				</ul>\n				<ul class=\"slimCarrouselButton\">\n					<li class=\"firstBut current\" data-icon=\"d\"></li>\n					<li class=\"secondBut \" data-icon=\"d\"></li>\n					<li class=\"thirdBut \" data-icon=\"d\"></li>\n				</ul>\n			</div>	\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>DECOUVREZ LES SERVICES SERVICES ibis</h3>\n				<a href=\"#\">Voir tous nos engagements</a><span data-icon='l'></span>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisPhone.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>ibis vous simplifie la vie ! Tout ibis depuis votre mobile</p>\n					<a href=\"#\">Créer votre compte</a>\n				</div>\n			</div>\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>VOTRE FIDÉLITÉ RÉCOMPENSÉE</h3>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisCard.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>Avantages, réductions, services exclusifs, ... nous récompensons votre fidélité !</p>\n					<a href=\"#\">En savoir plus</a>\n				</div>\n			</div>\n		</div>\n	</li>\n</ul>";
   });
 if (typeof define === 'function' && define.amd) {
   define([], function() {

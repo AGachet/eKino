@@ -27,6 +27,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/home_view.js",
+			"settings":
+			{
+				"buffer_size": 547,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -76,7 +84,7 @@
 	],
 	"find":
 	{
-		"height": 46.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -113,8 +121,38 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/home_view.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -146,7 +184,7 @@
 		"cols":
 		[
 			0.0,
-			0.527519180389,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -156,6 +194,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
 	"project": "ekino.sublime-project",
 	"replace":
 	{
@@ -197,5 +239,6 @@
 	"status_bar_visible": true,
 	"template_settings":
 	{
+		"max_columns": 2
 	}
 }

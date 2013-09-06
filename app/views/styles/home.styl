@@ -93,29 +93,24 @@
 
             li
               list-style none
-              position absolute
+              height 100px
               width 280px
 
               &.firstPan
-                top 0
-
-              &.secondPan
-                top 100px
-
-              &.thirdPan 
-                top 200px
+                margin-top 0
 
           .slimCarrouselButton
-            margin 0 0 0 108px
             float left
-            padding 0
+            margin 0 0 0 108px
+            padding 10px 0 0 0
             
             [data-icon]:before
               color #b6b6b6
 
             [data-icon].current:before
-              color #d3d3d3
+              color #666
 
             li
               list-style none
+              cursor pointer
               float left
