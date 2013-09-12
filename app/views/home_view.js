@@ -7,13 +7,8 @@ module.exports = View.extend({
 
   template: template,
 
-	initialize: function(){
-
-
-  },
-
   events: {
-    'click .meaBlocks .slimCarrouselButton li' : 'carrouselRun'
+    'focusin .meaBlocks .slimCarrouselButton li' : 'carrouselRun'
 	},
 
 	/*

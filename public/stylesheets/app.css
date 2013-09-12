@@ -693,10 +693,11 @@ footer .accor .linkPict:first-child a {
   text-shadow: 0 1px 1px #000;
 }
 #site #header .search {
+  margin: 0;
   width: 100%;
   float: left;
   background: #fff;
-  margin: 0;
+  position: relative;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
@@ -734,6 +735,189 @@ footer .accor .linkPict:first-child a {
 }
 #site #header .search .simpleSearch #destination {
   width: 143px;
+}
+#site #header .search .searchPan {
+  position: absolute;
+  background: #fff;
+  padding: 20px 0;
+  display: none;
+  width: 100%;
+  top: 62px;
+}
+#site #header .search .searchPan.active {
+  display: block;
+}
+#site #header .search .searchPan .leftSide {
+  float: left;
+  width: 615px;
+  margin: 0 0 0 20px;
+  padding: 0 30px 0 0;
+  border-right: 1px solid #ccc;
+}
+#site #header .search .searchPan fieldset {
+  padding: 0;
+  border: none;
+  width: 100%;
+  margin: 10px 0 30px 0;
+  font: 13px/normal 'Arial, Helvetica', sans-serif;
+  color: #717375;
+}
+#site #header .search .searchPan fieldset.rooms label {
+  font-weight: bold;
+  margin: 0 5px 0 0;
+}
+#site #header .search .searchPan fieldset.rooms select {
+  margin: 0 15px 0 0;
+}
+#site #header .search .searchPan fieldset.promoCard label {
+  margin: 0 5px 0 0;
+}
+#site #header .search .searchPan fieldset.roomOptions .servicesSelectFilters {
+  max-width: 500px;
+  padding: 0;
+  margin: 0;
+}
+#site #header .search .searchPan fieldset.roomOptions .servicesSelectFilters li {
+  float: left;
+  width: 150px;
+  list-style: none;
+  margin: 5px 0 5px 0;
+}
+#site #header .search .searchPan .butForm {
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+#site #header .search .searchPan .butForm button {
+  border: none;
+  font: 13px/normal 'Arial, Helvetica', sans-serif;
+  color: #666;
+}
+#site #header .search .searchPan .butForm button.lessOptions {
+  color: #f91b00;
+  background: none;
+  line-height: 35px;
+  margin: 0 10px 0 0;
+}
+#site #header .search .searchPan .butForm button.lessOptions [data-icon]:before {
+  color: #f91b00;
+}
+#site #header .search .searchPan .butForm button.searchPanSubmit {
+  color: #fff;
+  line-height: 35px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #f91b00;
+  float: right;
+  padding: 0 10px 0 0;
+}
+#site #header .search .searchPan .butForm button.searchPanSubmit span {
+  float: left;
+  height: 100%;
+  margin: 0 10px 0 0;
+  border-right: 1px solid #e94733;
+}
+#site #header .search .searchPan .butForm button.searchPanSubmit [data-icon]:before {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 15px;
+}
+#site #header .search .searchPan .butAdvancedSearch {
+  float: left;
+  width: 100%;
+  padding: 20px 0 0 0;
+}
+#site #header .search .searchPan .butAdvancedSearch button {
+  font: 13px/normal 'Arial, Helvetica', sans-serif;
+  color: #717375;
+  background: none;
+  border: none;
+  float: right;
+}
+#site #header .search .searchPan .butAdvancedSearch button [data-icon]:before {
+  margin: 0 0 0 5px;
+}
+#site #header .search .searchPan .rightSide {
+  float: right;
+  width: 300px;
+}
+#site #header .search .searchPan .rightSide ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#site #header .search .searchPan .rightSide ul li {
+  border-top: 1px solid #ccc;
+  margin: 0 20px 0 0;
+}
+#site #header .search .searchPan .rightSide ul li:first-child {
+  border: none;
+}
+#site #header .search .searchPan .rightSide ul li [data-icon]:before {
+  vertical-align: middle;
+  font-size: 20px;
+}
+#site #header .search .searchPan .rightSide ul li .rightIcon {
+  float: right;
+}
+#site #header .search .searchPan .rightSide ul li .rightIcon:before {
+  line-height: 45px;
+  font-size: 20px;
+  color: #a9a9a9;
+}
+#site #header .search .searchPan .rightSide ul li a {
+  font: 14px/45px 'Arial, Helvetica', sans-serif;
+  color: #717375;
+  text-decoration: none;
+  margin: 0 0 0 10px;
+}
+#site #header .search .searchPan .rightSide ul li a:hover {
+  text-decoration: underline;
+}
+#site #header .search .searchPan .rightSide ul li.phone [data-icon]:before {
+  line-height: 80px;
+}
+#site #header .search .searchPan .rightSide ul li.phone div {
+  float: right;
+  width: 242px;
+  margin: 15px 0 0 0;
+}
+#site #header .search .searchPan .rightSide ul li.phone div span {
+  font: 16px/normal 'Arial, Helvetica', sans-serif;
+  color: #717375;
+  float: left;
+  width: 100%;
+}
+#site #header .search .searchPan .rightSide ul li.phone div span.number {
+  font-size: 34px;
+}
+#site #header .search .searchPan .rightSide ul li.phone div span.price {
+  font-size: 10px;
+}
+#site #header .search .searchPan .rightSide .close {
+  border: none;
+  font: 13px/normal 'Arial, Helvetica', sans-serif;
+  color: #666;
+  color: #fff;
+  line-height: 35px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 15px 20px 0 0;
+  background: #717375;
+  float: right;
+  padding: 0 10px 0 0;
+}
+#site #header .search .searchPan .rightSide .close span {
+  float: left;
+  height: 100%;
+  margin: 0 10px 0 0;
+  border-right: 1px solid #b5b7b8;
+}
+#site #header .search .searchPan .rightSide .close [data-icon]:before {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 12px;
 }
 #site.home #header .search {
   margin: 0;

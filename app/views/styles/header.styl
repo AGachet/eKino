@@ -76,10 +76,11 @@
         fontStyle(arialN, 13px, #fff, 31px, 0 1px 1px #000)
 
     .search
+      margin 0
       width 100%
       float left
       background #fff
-      margin 0
+      position relative
       border-radius 5px
 
       h3
@@ -103,7 +104,6 @@
         input
           height 31px
           width 70px
-          //margin 0 15px 0 5px
           fontStyle(arialN, 12px, #717375)
 
         [data-icon]:before
@@ -112,9 +112,187 @@
           margin 0 15px 0 5px
           vertical-align middle
 
-
         #destination
           width 143px
+
+      .searchPan
+        position absolute
+        background #fff
+        padding 20px 0
+        display none
+        width 100%
+        top 62px
+
+        &.active
+          display block
+
+        .leftSide
+          float left
+          width 615px
+          margin 0 0 0 20px
+          padding 0 30px 0 0
+          border-right 1px solid #ccc
+
+        fieldset
+          padding 0
+          border none
+          width 100%
+          margin 10px 0 30px 0
+          fontStyle(arialN, 13px, #717375)
+
+          &.rooms
+            label
+              font-weight bold
+              margin 0 5px 0 0 
+
+            select
+              margin 0 15px 0 0
+
+          &.promoCard
+            label
+              margin 0 5px 0 0
+
+          &.roomOptions
+            .servicesSelectFilters
+              max-width 500px
+              padding 0
+              margin 0
+
+              li
+                float left
+                width 150px
+                list-style none
+                margin 5px 0 5px 0
+
+        .butForm
+          float left
+          width 100%
+          padding 20px 0
+          border-bottom 1px solid #ccc
+
+          button
+            border none
+            fontStyle(arialN, 13px)
+
+            &.lessOptions
+              color #f91b00
+              background none
+              line-height 35px
+              margin 0 10px 0 0
+
+              [data-icon]:before
+                color #f91b00
+
+            &.searchPanSubmit
+              color #fff
+              line-height 35px
+              border-radius 5px
+              background #F91B00
+              float right
+              padding 0 10px 0 0
+
+              span
+                float left
+                height 100%
+                margin 0 10px 0 0
+                border-right 1px solid #e94733
+
+              [data-icon]:before
+                color #fff
+                margin 0 10px
+                font-size 15px
+
+        .butAdvancedSearch
+          float left
+          width 100%
+          padding 20px 0 0 0
+
+          button
+            fontStyle(arialN, 13px, #717375)
+            background none
+            border none
+            float right
+
+            [data-icon]:before
+              margin 0 0 0 5px
+
+        .rightSide
+          float right
+          width 300px
+
+          ul
+            list-style none
+            padding 0
+            margin 0
+
+            li
+              border-top 1px solid #ccc
+              margin 0 20px 0 0
+
+              &:first-child
+                border none
+
+              [data-icon]:before
+                vertical-align middle
+                font-size 20px
+
+              .rightIcon
+                float right
+
+                &:before
+                  line-height 45px
+                  font-size 20px
+                  color #a9a9a9
+
+              a
+                fontStyle(arialN, 14px, #717375, 45px)
+                text-decoration none
+                margin 0 0 0 10px
+
+                &:hover
+                  text-decoration underline
+
+              &.phone
+
+                [data-icon]:before
+                  line-height 80px
+
+                div
+                  float right
+                  width 242px
+                  margin 15px 0 0 0
+
+                  span
+                    fontStyle(arialN, 16px, #717375)
+                    float left
+                    width 100%
+
+                    &.number
+                      font-size 34px
+
+                    &.price
+                      font-size 10px
+          .close
+            border none
+            fontStyle(arialN, 13px)
+            color #fff
+            line-height 35px
+            border-radius 5px
+            margin 15px 20px 0 0
+            background #717375
+            float right
+            padding 0 10px 0 0
+
+            span
+              float left
+              height 100%
+              margin 0 10px 0 0
+              border-right 1px solid #b5b7b8
+
+            [data-icon]:before
+              color #fff
+              margin 0 10px
+              font-size 12px
 
   &.home 
     #header

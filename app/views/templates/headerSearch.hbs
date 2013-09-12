@@ -1,18 +1,117 @@
 <form>
-	<h3><span data-icon="s"></span>Rechercher et réserver</h3>
-	<fieldset class="simpleSearch">
+	<h3><span data-icon="("></span>Rechercher et réserver</h3>
 
+	<fieldset class="simpleSearch">
 		<label for="destination">Destination</label>
-		<input id="destination" type="text" placeholder="Ville / Pays / Code Hôtel" value="" name="destination" />
-		<span data-icon="H"></span>
+		<input id="destination" tabindex="1" type="text" placeholder="Ville / Pays / Code Hôtel" value="" name="destination" />
+		<span data-icon=")"></span>
 
 		<label for="arrival">Arrivée</label>
-		<input id="arrival" type="text" value="" name="arrival" />
-		<span data-icon="c"></span>
+		<input id="arrival" tabindex="2" type="text" value="" name="arrival" />
+		<span data-icon="&#x22;"></span>
 
 		<label for="departure">Départ</label>
-		<input id="departure" type="text" value="" name="departure" />
-		<span data-icon="c"></span>
-
+		<input id="departure" tabindex="3" type="text" value="" name="departure" />
+		<span data-icon="&#x22;"></span>
 	</fieldset>
+
+	<div class="searchPan">
+		<div class="leftSide">
+			<fieldset class="rooms">
+				<label for="searchRoom">Chambre(s)</label>
+				<select id="searchPanRoom" tabindex="4" name="searchRoom">
+					<option>1</option>
+					<option>2</option>
+				</select>
+
+				<label for="searchAdults">Adulte(s)</label>
+				<select id="searchPanAdults" tabindex="5" name="searchAdults">
+					<option>1</option>
+					<option>2</option>
+				</select>
+
+				<label for="searchChildrens">Enfant(s)</label>
+				<select id="searchPanChildrens" tabindex="6" name="searchChildrens">
+					<option>1</option>
+					<option>2</option>
+				</select>
+
+			</fieldset>
+
+			<fieldset class="promoCard">
+				<label for="searchPromoCard">N° Carte de fidélité</label>
+				<input id="searchPanPromoCard" tabindex="7" type="text" value="" name="searchPromoCard"/>
+				<span data-icon=")"></span>		
+			</fieldset>
+
+			<fieldset class="roomOptions">
+				<ul class="servicesSelectFilters">	
+	        <li>
+	        	<input type="checkbox" id="filterPanRestaurant" tabindex="8" value="" name="filterRestaurant"/>
+	        	<label for="filterRestaurant">Restaurant</label>
+	        </li>
+	        <li>
+	        	<input type="checkbox" id="filterPanParking" tabindex="9" value="" name="filterParking"/>
+	        	<label for="filterParking">Parking</label>
+	        </li>
+	        <li>
+	        	<input type="checkbox" id="filterPanMeetingRoom" tabindex="10" value="" name="filterMeetingRoom"/>
+	        	<label for="filterMeetingRoom">Salle de réunion</label>
+	        </li>
+	        <li>
+	        	<input type="checkbox" id="filterPanInternet" tabindex="11" value="" name="filterInternet"/>
+	        	<label for="filterInternet">Accès Internet</label>
+	        </li>
+	      	<li>
+	        	<input type="checkbox" id="filterPanEnvironmental" tabindex="12" value="" name="filterEnvironmental"/>
+	        	<label for="filterEnvironmental">Eco certification</label>
+	        </li>
+	        <li>
+	        	<input type="checkbox" id="filterPanPets" tabindex="13" value="" name="filterPets"/>
+	        	<label for="filterPets">Animaux acceptés</label>
+	        </li>
+	    	</ul>	
+			</fieldset>
+
+			<fieldset class="prefCodePro">
+				<label for="searchPromoCard">Code préférenciel</label>
+				<input id="searchPanPromoCard" tabindex="14" type="text" value="" name="searchPromoCard"/>
+				<span data-icon=")"></span>
+
+	    	<input type="checkbox" id="filterPanPro" tabindex="15" value="" name="filterPro"/>
+	    	<label for="filterRestaurant">Voyageur d’affaires avec contrat</label>
+			</fieldset>
+
+			<div class="butForm">
+				<button class="lessOptions"><span data-icon="0"></span>Moins d’options de recherche  (code préférenciel, services...)</button>
+				<button class="searchPanSubmit"><span data-icon="("></span>Rechercher</button>
+			</div>
+
+			<div class="butAdvancedSearch">
+				<button>Page de récherche avancée<span data-icon="$"></span></button>
+			</div>
+		</div>
+
+		<div class="rightSide">
+			<ul>
+				<li><span data-icon="."></span><a href="#">Renouveler une réservation</a><span class="rightIcon" data-icon="$"></span></li>
+				<li><span data-icon="-"></span><a href="#">Trouver sur une carte</a><span class="rightIcon" data-icon="$"></span></li>
+				<li><span data-icon=","></span><a href="#">Trouver sur votre itinéraire</a><span class="rightIcon" data-icon="$"></span></li>
+				<li><span data-icon="*"></span><a href="#">Trouver près d’un point d’intérêt</a><span class="rightIcon" data-icon="$"></span></li>
+				<li><span data-icon="+"></span><a href="#">Trouver près d’une adresse</a><span class="rightIcon" data-icon="$"></span></li>
+				<li><span data-icon="/"></span><a href="#">Liste alphabétique</a><span class="rightIcon" data-icon="$"></span></li>
+				<li class="phone">
+					<span data-icon="1"></span>
+					<div>
+						<span>Réserver par téléphone</span>
+						<span class="number">0825 012 011</span>
+						<span class="price">(0,15€TTC/min)</span>
+					</div>
+				</li>
+			</ul>
+			<button class="close"><span data-icon="2"></span>Fermer</button>
+		</div>
+
+	</div>
+
 </form>

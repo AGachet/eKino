@@ -7,6 +7,7 @@ module.exports = Backbone.View.extend({
   },
 
   template: function() {},
+
   getRenderData: function() {},
 
   render: function() {
@@ -16,4 +17,5 @@ module.exports = Backbone.View.extend({
   },
 
   afterRender: function() {}
+  
 });

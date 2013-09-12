@@ -183,7 +183,50 @@ var template = require('./templates/headerSearch');
 module.exports = View.extend({
 
   el: '#header .search',
-  template: template
+
+  template: template,
+
+  events: {
+		'focusin  input' 				: 'displaySearchPan',
+		'click button.close' 		: 'displaySearchPan',
+	},
+
+	/*
+	 * 	Rewritte render function
+	 */
+
+	render: function() {
+
+		var view, viewEl;
+
+		view = this;
+		viewEl = view.$el;
+
+    viewEl.html(view.template());
+
+  },
+
+	/*
+	 * 	Display search panel
+	 */
+
+	displaySearchPan : function(e){
+
+		var view, viewEl, panel, isAskToClose;
+
+		view = this;
+		viewEl = view.$el;
+		panel = viewEl.find('.searchPan');
+		isAskToClose = (e.type === 'click') ? true : false;
+
+
+		if (isAskToClose) {
+			panel.removeClass('active');
+		} else {
+			panel.addClass('active');
+		}
+
+	}
   
 });
 });
@@ -198,13 +241,8 @@ module.exports = View.extend({
 
   template: template,
 
-	initialize: function(){
-
-
-  },
-
   events: {
-    'click .meaBlocks .slimCarrouselButton li' : 'carrouselRun'
+    'focusin .meaBlocks .slimCarrouselButton li' : 'carrouselRun'
 	},
 
 	/*
@@ -327,7 +365,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<form>\n	<h3><span data-icon=\"s\"></span>Rechercher et réserver</h3>\n	<fieldset class=\"simpleSearch\">\n\n		<label for=\"destination\">Destination</label>\n		<input id=\"destination\" type=\"text\" placeholder=\"Ville / Pays / Code Hôtel\" value=\"\" name=\"destination\" />\n		<span data-icon=\"H\"></span>\n\n		<label for=\"arrival\">Arrivée</label>\n		<input id=\"arrival\" type=\"text\" value=\"\" name=\"arrival\" />\n		<span data-icon=\"c\"></span>\n\n		<label for=\"departure\">Départ</label>\n		<input id=\"departure\" type=\"text\" value=\"\" name=\"departure\" />\n		<span data-icon=\"c\"></span>\n\n	</fieldset>\n</form>";
+  return "<form>\n	<h3><span data-icon=\"(\"></span>Rechercher et réserver</h3>\n\n	<fieldset class=\"simpleSearch\">\n		<label for=\"destination\">Destination</label>\n		<input id=\"destination\" tabindex=\"1\" type=\"text\" placeholder=\"Ville / Pays / Code Hôtel\" value=\"\" name=\"destination\" />\n		<span data-icon=\")\"></span>\n\n		<label for=\"arrival\">Arrivée</label>\n		<input id=\"arrival\" tabindex=\"2\" type=\"text\" value=\"\" name=\"arrival\" />\n		<span data-icon=\"&#x22;\"></span>\n\n		<label for=\"departure\">Départ</label>\n		<input id=\"departure\" tabindex=\"3\" type=\"text\" value=\"\" name=\"departure\" />\n		<span data-icon=\"&#x22;\"></span>\n	</fieldset>\n\n	<div class=\"searchPan\">\n		<div class=\"leftSide\">\n			<fieldset class=\"rooms\">\n				<label for=\"searchRoom\">Chambre(s)</label>\n				<select id=\"searchPanRoom\" tabindex=\"4\" name=\"searchRoom\">\n					<option>1</option>\n					<option>2</option>\n				</select>\n\n				<label for=\"searchAdults\">Adulte(s)</label>\n				<select id=\"searchPanAdults\" tabindex=\"5\" name=\"searchAdults\">\n					<option>1</option>\n					<option>2</option>\n				</select>\n\n				<label for=\"searchChildrens\">Enfant(s)</label>\n				<select id=\"searchPanChildrens\" tabindex=\"6\" name=\"searchChildrens\">\n					<option>1</option>\n					<option>2</option>\n				</select>\n\n			</fieldset>\n\n			<fieldset class=\"promoCard\">\n				<label for=\"searchPromoCard\">N° Carte de fidélité</label>\n				<input id=\"searchPanPromoCard\" tabindex=\"7\" type=\"text\" value=\"\" name=\"searchPromoCard\"/>\n				<span data-icon=\")\"></span>		\n			</fieldset>\n\n			<fieldset class=\"roomOptions\">\n				<ul class=\"servicesSelectFilters\">	\n	        <li>\n	        	<input type=\"checkbox\" id=\"filterPanRestaurant\" tabindex=\"8\" value=\"\" name=\"filterRestaurant\"/>\n	        	<label for=\"filterRestaurant\">Restaurant</label>\n	        </li>\n	        <li>\n	        	<input type=\"checkbox\" id=\"filterPanParking\" tabindex=\"9\" value=\"\" name=\"filterParking\"/>\n	        	<label for=\"filterParking\">Parking</label>\n	        </li>\n	        <li>\n	        	<input type=\"checkbox\" id=\"filterPanMeetingRoom\" tabindex=\"10\" value=\"\" name=\"filterMeetingRoom\"/>\n	        	<label for=\"filterMeetingRoom\">Salle de réunion</label>\n	        </li>\n	        <li>\n	        	<input type=\"checkbox\" id=\"filterPanInternet\" tabindex=\"11\" value=\"\" name=\"filterInternet\"/>\n	        	<label for=\"filterInternet\">Accès Internet</label>\n	        </li>\n	      	<li>\n	        	<input type=\"checkbox\" id=\"filterPanEnvironmental\" tabindex=\"12\" value=\"\" name=\"filterEnvironmental\"/>\n	        	<label for=\"filterEnvironmental\">Eco certification</label>\n	        </li>\n	        <li>\n	        	<input type=\"checkbox\" id=\"filterPanPets\" tabindex=\"13\" value=\"\" name=\"filterPets\"/>\n	        	<label for=\"filterPets\">Animaux acceptés</label>\n	        </li>\n	    	</ul>	\n			</fieldset>\n\n			<fieldset class=\"prefCodePro\">\n				<label for=\"searchPromoCard\">Code préférenciel</label>\n				<input id=\"searchPanPromoCard\" tabindex=\"14\" type=\"text\" value=\"\" name=\"searchPromoCard\"/>\n				<span data-icon=\")\"></span>\n\n	    	<input type=\"checkbox\" id=\"filterPanPro\" tabindex=\"15\" value=\"\" name=\"filterPro\"/>\n	    	<label for=\"filterRestaurant\">Voyageur d’affaires avec contrat</label>\n			</fieldset>\n\n			<div class=\"butForm\">\n				<button class=\"lessOptions\"><span data-icon=\"0\"></span>Moins d’options de recherche  (code préférenciel, services...)</button>\n				<button class=\"searchPanSubmit\"><span data-icon=\"(\"></span>Rechercher</button>\n			</div>\n\n			<div class=\"butAdvancedSearch\">\n				<button>Page de récherche avancée<span data-icon=\"$\"></span></button>\n			</div>\n		</div>\n\n		<div class=\"rightSide\">\n			<ul>\n				<li><span data-icon=\".\"></span><a href=\"#\">Renouveler une réservation</a><span class=\"rightIcon\" data-icon=\"$\"></span></li>\n				<li><span data-icon=\"-\"></span><a href=\"#\">Trouver sur une carte</a><span class=\"rightIcon\" data-icon=\"$\"></span></li>\n				<li><span data-icon=\",\"></span><a href=\"#\">Trouver sur votre itinéraire</a><span class=\"rightIcon\" data-icon=\"$\"></span></li>\n				<li><span data-icon=\"*\"></span><a href=\"#\">Trouver près d’un point d’intérêt</a><span class=\"rightIcon\" data-icon=\"$\"></span></li>\n				<li><span data-icon=\"+\"></span><a href=\"#\">Trouver près d’une adresse</a><span class=\"rightIcon\" data-icon=\"$\"></span></li>\n				<li><span data-icon=\"/\"></span><a href=\"#\">Liste alphabétique</a><span class=\"rightIcon\" data-icon=\"$\"></span></li>\n				<li class=\"phone\">\n					<span data-icon=\"1\"></span>\n					<div>\n						<span>Réserver par téléphone</span>\n						<span class=\"number\">0825 012 011</span>\n						<span class=\"price\">(0,15€TTC/min)</span>\n					</div>\n				</li>\n			</ul>\n			<button class=\"close\"><span data-icon=\"2\"></span>Fermer</button>\n		</div>\n\n	</div>\n\n</form>\n";
   });
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -347,7 +385,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<ul class=\"splitMedia\">\n	<li>\n		<a href=\"#\">\n			<img src=\"/images/content/carrouselLarge/offreIbisVideo.jpg\" alt=\"lite la vidéo\" />\n		</a>\n	</li>\n</ul>\n<ul class=\"meaBlocks\">\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>TOP PROMOTIONS</h3>\n				<a href=\"#\">Voir toutes nos promotions</a><span data-icon=\"l\"></span>\n			</div>\n			<div class=\"meaContent\">\n				<ul class=\"slimCarrouselPanel\">\n					<li class=\"firstPan current\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"secondPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"thirdPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n				</ul>\n				<ul class=\"slimCarrouselButton\">\n					<li class=\"firstBut current\" data-icon=\"d\"></li>\n					<li class=\"secondBut \" data-icon=\"d\"></li>\n					<li class=\"thirdBut \" data-icon=\"d\"></li>\n				</ul>\n			</div>	\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>DECOUVREZ LES SERVICES SERVICES ibis</h3>\n				<a href=\"#\">Voir tous nos engagements</a><span data-icon='l'></span>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisPhone.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>ibis vous simplifie la vie ! Tout ibis depuis votre mobile</p>\n					<a href=\"#\">Créer votre compte</a>\n				</div>\n			</div>\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>VOTRE FIDÉLITÉ RÉCOMPENSÉE</h3>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisCard.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>Avantages, réductions, services exclusifs, ... nous récompensons votre fidélité !</p>\n					<a href=\"#\">En savoir plus</a>\n				</div>\n			</div>\n		</div>\n	</li>\n</ul>";
+  return "<ul class=\"splitMedia\">\n	<li>\n		<a href=\"#\">\n			<img src=\"/images/content/carrouselLarge/offreIbisVideo.jpg\" alt=\"lite la vidéo\" />\n		</a>\n	</li>\n</ul>\n<ul class=\"meaBlocks\">\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>TOP PROMOTIONS</h3>\n				<a href=\"#\">Voir toutes nos promotions</a><span data-icon=\"$\"></span>\n			</div>\n			<div class=\"meaContent\">\n				<ul class=\"slimCarrouselPanel\">\n					<li class=\"firstPan current\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"secondPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n					<li class=\"thirdPan\">\n						<div class=\"leftSide\">\n						  <img src=\"/images/content/carrouselSlim/photoLisb.jpg\" />\n						</div>\n						<div class=\"rightSide\">\n						  <a href=\"#\"><img src=\"/images/content/carrouselSlim/leftSide.jpg\" /></a>\n						</div>\n					</li>\n				</ul>\n				<ul class=\"slimCarrouselButton\">\n					<li class=\"firstBut current\" data-icon=\"#\"></li>\n					<li class=\"secondBut \" data-icon=\"#\"></li>\n					<li class=\"thirdBut \" data-icon=\"#\"></li>\n				</ul>\n			</div>	\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>DECOUVREZ LES SERVICES SERVICES ibis</h3>\n				<a href=\"#\">Voir tous nos engagements</a><span data-icon='l'></span>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisPhone.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>ibis vous simplifie la vie ! Tout ibis depuis votre mobile</p>\n					<a href=\"#\">Créer votre compte</a>\n				</div>\n			</div>\n		</div>\n	</li>\n	<li>\n		<div class=\"meaContainer\">\n			<div class=\"meaHeader\">\n				<h3>VOTRE FIDÉLITÉ RÉCOMPENSÉE</h3>\n			</div>\n			<div class=\"meaContent\">\n				<div class=\"leftSide\">\n				  <img src=\"/images/content/meaBlocks/ibisCard.jpg\" />\n				</div>\n				<div class=\"rightSide\">\n					<p>Avantages, réductions, services exclusifs, ... nous récompensons votre fidélité !</p>\n					<a href=\"#\">En savoir plus</a>\n				</div>\n			</div>\n		</div>\n	</li>\n</ul>";
   });
 if (typeof define === 'function' && define.amd) {
   define([], function() {
@@ -370,6 +408,7 @@ module.exports = Backbone.View.extend({
   },
 
   template: function() {},
+
   getRenderData: function() {},
 
   render: function() {
@@ -379,6 +418,7 @@ module.exports = Backbone.View.extend({
   },
 
   afterRender: function() {}
+  
 });
 
 });
