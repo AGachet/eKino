@@ -4,6 +4,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/agachet/Documents/sources/youmag-ng/bo-edito"
 		}
 	]
 }

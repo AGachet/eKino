@@ -1,5 +1,5 @@
 # Brunch with js
-This is a technical demo with [Brunch](http://brunch.io/) for eKino.
+This is a technical demo with [Brunch](http://brunch.io/).
 
 Main languages are JavaScript,
 [Stylus](http://learnboost.github.com/stylus/) and
